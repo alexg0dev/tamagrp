@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tama Group-EG | Contact Us</title>
+    <!-- Tailwind CSS CDN for prototyping -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+      }
+      /* Fade in animation */
+      .fade-in {
+        animation: fadeIn 0.5s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      /* Hover scale effect */
+      .hover-scale {
+        transition: transform 0.2s ease-in-out;
+      }
+      .hover-scale:hover {
+        transform: scale(1.05);
+      }
+      /* Section divider (subtle line) */
+      .section-divider {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-800 scroll-smooth">
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 right-0 z-50 shadow-lg bg-gradient-to-r from-emerald-600 to-lime-500">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo & Brand -->
+          <div class="flex items-center space-x-3">
+            <img src="images/tamagrp.jpg" alt="Tama Group Logo" class="h-12 w-12 rounded-full border-2 border-white shadow-md hover-scale" />
+            <a href="home.html" class="text-2xl font-bold text-white hover:text-gray-200 transition-colors hover-scale">
+              Tama Group-EG
+            </a>
+          </div>
+          <!-- Desktop Navigation -->
+          <nav class="hidden md:flex items-center space-x-8">
+            <a href="home.html" class="text-white hover:text-gray-200 transition-colors hover-scale">Home</a>
+            <a href="whoweare.html" class="text-white hover:text-gray-200 transition-colors hover-scale">Who We Are</a>
+            <!-- Our Mission Dropdown -->
+            <div class="relative">
+              <button id="mission-btn" class="inline-flex items-center text-white hover:text-gray-200 focus:outline-none hover-scale">
+                <span>Our Mission</span>
+                <svg class="ml-1 h-4 w-4 fill-current" viewBox="0 0 20 20">
+                  <path d="M5.23 7.21a.75.75 0 011.06.02L10 11.585l3.71-4.355a.75.75 0 011.14.976l-4.25 5a.75.75 0 01-1.14 0l-4.25-5a.75.75 0 01.02-1.06z" />
+                </svg>
+              </button>
+              <div id="mission-dropdown" class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden">
+                <a href="humanapis.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover-scale">Human APIs</a>
+                <a href="mediclean.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover-scale">MediClean</a>
+              </div>
+            </div>
+            <a href="research.html" class="text-white hover:text-gray-200 transition-colors hover-scale">Research</a>
+            <a href="marketing.html" class="text-white hover:text-gray-200 transition-colors hover-scale">Marketing</a>
+            <a href="contact.html" class="text-white hover:text-gray-200 transition-colors hover-scale">Contact Us</a>
+          </nav>
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden">
+            <button id="menu-btn" class="text-white focus:outline-none">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Mobile Navigation -->
+      <div id="mobile-menu" class="hidden md:hidden bg-gradient-to-r from-emerald-600 to-lime-500">
+        <nav class="px-4 pt-2 pb-4 space-y-2">
+          <a href="home.html" class="block text-white px-3 py-2 rounded-md hover:bg-emerald-700 transition-colors">Home</a>
+          <a href="whoweare.html" class="block text-white px-3 py-2 rounded-md hover:bg-emerald-700 transition-colors">Who We Are</a>
+          <div class="border-t border-emerald-500">
+            <button id="mobile-mission-btn" class="w-full text-left text-white px-3 py-2 flex justify-between items-center focus:outline-none">
+              <span>Our Mission</span>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                <path d="M5.23 7.21a.75.75 0 011.06.02L10 11.585l3.71-4.355a.75.75 0 011.14.976l-4.25 5a.75.75 0 01-1.14 0l-4.25-5a.75.75 0 01.02-1.06z" />
+              </svg>
+            </button>
+            <div id="mobile-mission-dropdown" class="hidden pl-4">
+              <a href="humanapis.html" class="block text-white px-3 py-2 hover:bg-emerald-700 rounded-md">Human APIs</a>
+              <a href="mediclean.html" class="block text-white px-3 py-2 hover:bg-emerald-700 rounded-md">MediClean</a>
+            </div>
+          </div>
+          <a href="research.html" class="block text-white px-3 py-2 rounded-md hover:bg-emerald-700 transition-colors">Research</a>
+          <a href="marketing.html" class="block text-white px-3 py-2 rounded-md hover:bg-emerald-700 transition-colors">Marketing</a>
+          <a href="contact.html" class="block text-white px-3 py-2 rounded-md hover:bg-emerald-700 transition-colors">Contact Us</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT: Contact Us Page -->
+    <main class="pt-20 pb-12">
+      <section id="contact-us" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h1 class="text-4xl font-bold text-center mb-12">Contact Us</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Google Maps Embed -->
+          <div class="bg-white p-8 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Our Location</h2>
+            <iframe
+              class="w-full h-64 rounded"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.100000000001!2d31.200092315087105!3d30.04441948094278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145847b5a3c0b6c1%3A0xa1a2b3c4d5e6f7!2sCairo%2C%20Egypt!5e0!3m2!1sen!2sus!4v1610000000000"
+              frameborder="0"
+              style="border:0;"
+              allowfullscreen=""
+              aria-hidden="false"
+              tabindex="0"
+            ></iframe>
+          </div>
+          <!-- Contact Details -->
+          <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col justify-center">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Contact Details</h2>
+            <p class="text-gray-700 mb-4"><strong>Address:</strong> 123 Healthcare Ave, Cairo, Egypt</p>
+            <p class="text-gray-700 mb-4">
+              <strong>Phone:</strong>
+              <a href="tel:+20123456789" class="hover:underline">+20 123 456 789</a>
+            </p>
+            <p class="text-gray-700 mb-4">
+              <strong>Email:</strong>
+              <a href="mailto:info@tamagroup-eg.com" class="hover:underline">info@tamagroup-eg.com</a>
+            </p>
+            <p class="text-gray-700"><strong>Fax:</strong> +20 111 222 333</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- About -->
+          <div>
+            <h3 class="text-2xl font-bold text-white mb-4">Tama Group-EG</h3>
+            <p class="text-gray-400">
+              We are innovators in healthcare—merging cutting-edge technology with research and compassionate care to empower communities and transform lives.
+            </p>
+          </div>
+          <!-- Quick Links -->
+          <div>
+            <h4 class="text-xl font-semibold text-white mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+              <li><a href="home.html" class="hover:text-white transition-colors">Home</a></li>
+              <li><a href="whoweare.html" class="hover:text-white transition-colors">Who We Are</a></li>
+              <li><a href="research.html" class="hover:text-white transition-colors">Research</a></li>
+              <li><a href="marketing.html" class="hover:text-white transition-colors">Marketing</a></li>
+              <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
+            </ul>
+          </div>
+          <!-- Social Media -->
+          <div>
+            <h4 class="text-xl font-semibold text-white mb-4">Follow Us</h4>
+            <div class="flex space-x-4">
+              <a href="#" aria-label="Facebook" class="hover:text-white transition-colors">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                  <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.12 8.44 9.88v-6.99H7.9v-2.89h2.54V9.41c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.25 0-1.64.78-1.64 1.58v1.9h2.8l-.45 2.89h-2.35v6.99C18.34 21.12 22 16.99 22 12z"/>
+                </svg>
+              </a>
+              <a href="#" aria-label="Twitter" class="hover:text-white transition-colors">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                  <path d="M22.46 6c-.77.35-1.6.59-2.46.69a4.28 4.28 0 001.88-2.37 8.59 8.59 0 01-2.71 1.03 4.27 4.27 0 00-7.29 3.9 12.12 12.12 0 01-8.8-4.46 4.27 4.27 0 001.32 5.7A4.23 4.23 0 012 9.71v.05a4.27 4.27 0 003.42 4.18 4.28 4.28 0 01-1.92.07 4.27 4.27 0 003.98 2.96A8.56 8.56 0 012 19.54 12.07 12.07 0 008.29 21c7.55 0 11.68-6.26 11.68-11.68 0-.18-.01-.36-.02-.53A8.36 8.36 0 0022.46 6z"/>
+                </svg>
+              </a>
+              <a href="#" aria-label="LinkedIn" class="hover:text-white transition-colors">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                  <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4v16h-4V8zM8 8h3.8v2.2h.06a4.17 4.17 0 013.74-2.06c4 0 4.75 2.64 4.75 6.06V24h-4v-7.5c0-1.8-.03-4.11-2.5-4.11-2.5 0-2.89 1.95-2.89 3.96V24h-4V8z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="mt-8 border-t border-gray-700 pt-6 text-center">
+          <p class="text-gray-500">&copy; 2025 Tama Group-EG. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+      // Toggle mobile main menu
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+      
+      // Toggle desktop "Our Mission" dropdown on click
+      const missionBtn = document.getElementById("mission-btn");
+      const missionDropdown = document.getElementById("mission-dropdown");
+      missionBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        missionDropdown.classList.toggle("hidden");
+      });
+      document.addEventListener("click", () => {
+        if (!missionDropdown.classList.contains("hidden")) {
+          missionDropdown.classList.add("hidden");
+        }
+      });
+      
+      // Toggle mobile "Our Mission" dropdown
+      const mobileMissionBtn = document.getElementById("mobile-mission-btn");
+      const mobileMissionDropdown = document.getElementById("mobile-mission-dropdown");
+      mobileMissionBtn.addEventListener("click", () => {
+        mobileMissionDropdown.classList.toggle("hidden");
+      });
+      
+      // (Optional) Gallery Modal JavaScript (if used on other pages)
+      const galleryImages = [
+        "images/1.jpg",
+        "images/2.jpg",
+        "images/3.jpg",
+        "images/4.jpg",
+        "images/5.jpg",
+        "images/6.jpg",
+        "images/7.jpg",
+        "images/8.jpg",
+        "images/9.jpg",
+        "images/10.jpg"
+      ];
+      let currentImageIndex = 0;
+      const galleryModal = document.getElementById("gallery-modal");
+      const galleryImageElement = document.getElementById("gallery-image");
+      const openGalleryCard = document.getElementById("openGalleryCard");
+      const mobileOpenGallery = document.getElementById("mobile-open-gallery");
+      const closeGalleryBtn = document.getElementById("close-gallery");
+      const prevBtn = document.getElementById("prev-image");
+      const nextBtn = document.getElementById("next-image");
+      
+      function showImage(index) {
+        galleryImageElement.classList.remove("fade-in");
+        void galleryImageElement.offsetWidth;
+        galleryImageElement.src = galleryImages[index];
+        galleryImageElement.classList.add("fade-in");
+      }
+      
+      function openGallery() {
+        galleryModal.classList.remove("hidden");
+        galleryModal.classList.add("flex", "items-center", "justify-center");
+        currentImageIndex = 0;
+        showImage(currentImageIndex);
+      }
+      
+      if (openGalleryCard) {
+        openGalleryCard.addEventListener("click", openGallery);
+      }
+      if (mobileOpenGallery) {
+        mobileOpenGallery.addEventListener("click", openGallery);
+      }
+      
+      if (closeGalleryBtn) {
+        closeGalleryBtn.addEventListener("click", () => {
+          galleryModal.classList.add("hidden");
+        });
+      }
+      
+      if (prevBtn) {
+        prevBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+          showImage(currentImageIndex);
+        });
+      }
+      
+      if (nextBtn) {
+        nextBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+          showImage(currentImageIndex);
+        });
+      }
+      
+      if (galleryModal) {
+        galleryModal.addEventListener("click", (e) => {
+          if(e.target === galleryModal) {
+            galleryModal.classList.add("hidden");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

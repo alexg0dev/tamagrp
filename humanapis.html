@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tama Group-EG | Human API's</title>
+    <!-- Tailwind CSS CDN for prototyping -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+      }
+      /* Fade in animation */
+      .fade-in {
+        animation: fadeIn 0.5s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      /* Hover scale effect */
+      .hover-scale {
+        transition: transform 0.2s ease-in-out;
+      }
+      .hover-scale:hover {
+        transform: scale(1.05);
+      }
+      /* Section divider (subtle line) */
+      .section-divider {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-800 scroll-smooth">
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 right-0 z-50 shadow-lg bg-gradient-to-r from-emerald-600 to-lime-500">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo & Brand -->
+          <div class="flex items-center space-x-3">
+            <img src="images/tamagrp.jpg" alt="Tama Group Logo" class="h-12 w-12 rounded-full border-2 border-white shadow-md hover-scale" />
+            <a href="index.html" class="text-2xl font-bold text-white hover:text-gray-200 transition-colors hover-scale">
+              Tama Group-EG
+            </a>
+          </div>
+          <!-- Desktop Navigation -->
+          <nav class="hidden md:flex items-center space-x-8">
+            <a href="index.html" class="text-white hover:text-gray-200 transition-colors hover-scale">Home</a>
+            <a href="whoweare.html" class="text-white hover:text-gray-200 transition-colors hover-scale">Who We Are</a>
+            <!-- Our Mission Dropdown -->
+            <div class="relative">
+              <button id="mission-btn" class="inline-flex items-center text-white hover:text-gray-200 focus:outline-none hover-scale">
+                <span>Our Mission</span>
+                <svg class="ml-1 h-4 w-4 fill-current" viewBox="0 0 20 20">
+                  <path d="M5.23 7.21a.75.75 0 011.06.02L10 11.585l3.71-4.355a.75.75 0 011.14.976l-4.25 5a.75.75 0 01-1.14 0l-4.25-5a.75.75 0 01.02-1.06z" />
+                </svg>
+              </button>
+              <div id="mission-dropdown" class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden">
+                <a href="ourmission.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover-scale">Human API’s</a>
+                <a href="ourmission.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover-scale">MediClean</a>
+              </div>
+            </div>
+            <a href="research.html" class="text-white hover:text-gray-200 transition-colors hover-scale">Research</a>
+            <a href="marketing.html" class="text-white hover:text-gray-200 transition-colors hover-scale">Marketing</a>
+            <a href="contactus.html" class="text-white hover:text-gray-200 transition-colors hover-scale">Contact Us</a>
+          </nav>
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden">
+            <button id="menu-btn" class="text-white focus:outline-none">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Mobile Navigation -->
+      <div id="mobile-menu" class="hidden md:hidden bg-gradient-to-r from-emerald-600 to-lime-500">
+        <nav class="px-4 pt-2 pb-4 space-y-2">
+          <a href="home.html" class="block text-white px-3 py-2 rounded-md hover:bg-emerald-700 transition-colors">Home</a>
+          <a href="whoweare.html" class="block text-white px-3 py-2 rounded-md hover:bg-emerald-700 transition-colors">Who We Are</a>
+          <div class="border-t border-emerald-500">
+            <button id="mobile-mission-btn" class="w-full text-left text-white px-3 py-2 flex justify-between items-center focus:outline-none">
+              <span>Our Mission</span>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                <path d="M5.23 7.21a.75.75 0 011.06.02L10 11.585l3.71-4.355a.75.75 0 011.14.976l-4.25 5a.75.75 0 01-1.14 0l-4.25-5a.75.75 0 01.02-1.06z" />
+              </svg>
+            </button>
+            <div id="mobile-mission-dropdown" class="hidden pl-4">
+              <a href="ourmission.html" class="block text-white px-3 py-2 hover:bg-emerald-700 rounded-md">Human API’s</a>
+              <a href="ourmission.html" class="block text-white px-3 py-2 hover:bg-emerald-700 rounded-md">MediClean</a>
+            </div>
+          </div>
+          <a href="research.html" class="block text-white px-3 py-2 rounded-md hover:bg-emerald-700 transition-colors">Research</a>
+          <a href="marketing.html" class="block text-white px-3 py-2 rounded-md hover:bg-emerald-700 transition-colors">Marketing</a>
+          <a href="contactus.html" class="block text-white px-3 py-2 rounded-md hover:bg-emerald-700 transition-colors">Contact Us</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="pt-20 pb-12">
+      <section id="humanapis" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h1 class="text-4xl font-bold text-center mb-8">Human API’s</h1>
+        <!-- Search Bar -->
+        <div class="mb-10 flex justify-center">
+          <input id="medicine-search" type="text" placeholder="Search for a medicine..." class="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none" />
+          <button id="search-button" class="px-4 py-2 bg-emerald-600 text-white rounded-r-md hover:bg-emerald-700 transition">
+            Search
+          </button>
+        </div>
+        <!-- Products List -->
+        <!-- The container has an ID so the search can filter its child items -->
+        <div id="medicines-list" class="space-y-8">
+          <!-- Group A -->
+          <h2 class="text-2xl font-bold">A</h2>
+          <ul class="list-disc ml-6 space-y-1">
+            <li>Abiraterone</li>
+            <li>Acephyfilline</li>
+            <li>Acetylsalicylic Acid</li>
+            <li>Agomelatine</li>
+            <li>Albendazole</li>
+            <li>Albendazole</li>
+            <li>Alkylations</li>
+            <li>Amorolfine HCl</li>
+            <li>Amoxicillin Sodium</li>
+            <li>Amoxicillin Sodium and Sulbactam Sodium (2:1)</li>
+            <li>Amoxicillin Trihydrate</li>
+            <li>Amoxicillin Trihydrate Compacted</li>
+            <li>Amoxicillin w.s.p.</li>
+            <li>Amoxicllin Trihydrate Powder</li>
+            <li>Amoxycillin</li>
+            <li>Amphotericin B for Injection</li>
+            <li>Amphotericin B Oral</li>
+            <li>Ampicillin</li>
+          </ul>
+          <!-- Group B -->
+          <h2 class="text-2xl font-bold mt-8">B</h2>
+          <ul class="list-disc ml-6 space-y-1">
+            <li>Bacitracin</li>
+            <li>Bacitracin Zinc</li>
+            <li>Baclofen</li>
+            <li>Base / Citrate/ Phosphate</li>
+            <li>Bendamustine HCl</li>
+            <li>Benserazide HCl</li>
+            <li>Benzathine Benzylpenicillin + 1% Lecithin + 0.2% Polysorbate80+10% Sodium Citrate Buffered （Sterile）</li>
+            <li>Benzylpenicillin Benzathine （Sterile，1％Lecithin）</li>
+            <li>Benzylpenicillin Benzathine （Sterile，Polysorbate 80）</li>
+            <li>Benzylpenicillin Benzathine （Sterile）</li>
+          </ul>
+          <!-- Group C -->
+          <h2 class="text-2xl font-bold mt-8">C</h2>
+          <ul class="list-disc ml-6 space-y-1">
+            <li>Caffeine anhydrous</li>
+            <li>Calcium Ascorbate</li>
+            <li>Calcium Polystyrene Sulph</li>
+            <li>Canagliflozin</li>
+            <li>Capreomycin Sulfate</li>
+            <li>Captopril</li>
+            <li>Carbamazepine</li>
+            <li>Caspofungin</li>
+            <li>Catalytic Hydrogenations</li>
+          </ul>
+          <!-- Group D -->
+          <h2 class="text-2xl font-bold mt-8">D</h2>
+          <ul class="list-disc ml-6 space-y-1">
+            <li>Daptomycin</li>
+            <li>Decoquinate</li>
+            <li>Decoquinate</li>
+            <li>Deflazacort Steroid</li>
+            <li>Demeclocycline</li>
+            <li>Dexamethasone Base</li>
+            <li>Dexamethasone Sod. Phosphate</li>
+            <li>Dexmedetomidine HCl</li>
+          </ul>
+          <!-- Group E -->
+          <h2 class="text-2xl font-bold mt-8">E</h2>
+          <ul class="list-disc ml-6 space-y-1">
+            <li>Eletriptan HBr</li>
+            <li>Enrofloxacin Base</li>
+            <li>Enrofloxacin HCL</li>
+            <li>Entacapone</li>
+            <li>Epinastine HCl</li>
+            <li>Eprinomectin</li>
+            <li>Erythromycin Salts</li>
+            <li>Erythromycine Base</li>
+            <li>Estradiol Benzoate</li>
+            <li>Estradiol Cypionate</li>
+            <li>Estradiol Hemihydrate</li>
+            <li>Estradiol Valerate</li>
+            <li>Estriol</li>
+            <li>Ethinyl Estradiol</li>
+            <li>Etoposide</li>
+          </ul>
+          <!-- Group F -->
+          <h2 class="text-2xl font-bold mt-8">F</h2>
+          <ul class="list-disc ml-6 space-y-1">
+            <li>Feedstuff Corn Bran</li>
+            <li>Feedstuff Corn Embryo</li>
+            <li>Fenofibrate</li>
+            <li>Fenticonazole</li>
+            <li>Fexofenadine HCl</li>
+            <li>Flavomycin Granulate</li>
+            <li>Flucloxacillin Sodium (Sterile)</li>
+            <li>Fluorouracil (5-FU)</li>
+            <li>Fluvoxamine Maleate (Non-Infringing)</li>
+            <li>Fomepizole</li>
+            <li>Fortified Procaine Penicillin (Sterile, Procaine Penicillin)</li>
+            <li>Fosfomycin calcium</li>
+            <li>Friedel Crafts Reactions</li>
+            <li>Fructose</li>
+            <li>Furaltadone</li>
+            <li>Furazolidone</li>
+            <li>Fusidate Sodium</li>
+            <li>Fusidic acid</li>
+          </ul>
+          <!-- Group G -->
+          <h2 class="text-2xl font-bold mt-8">G</h2>
+          <ul class="list-disc ml-6 space-y-1">
+            <li>Gefitinib</li>
+            <li>Gemcitabine HCl</li>
+            <li>Gentamycin Sulfate</li>
+            <li>Gentamycin Sulphate</li>
+            <li>Gingko Extract</li>
+          </ul>
+          <!-- Group H -->
+          <h2 class="text-2xl font-bold mt-8">H</h2>
+          <ul class="list-disc ml-6 space-y-1">
+            <li>Halogenations ( PCL , PCL , POCL ) 3 5 3</li>
+            <li>Hesperidin</li>
+            <li>High Temperature and high pressure Reactions</li>
+            <li>Homatropine MBr</li>
+            <li>Hydralazine HCl</li>
+            <li>Hydrazine Carboximidamide 2-[Cyano (2,3-Dichlorophenyl)]</li>
+            <li>Hydrocortisone Acetate</li>
+            <li>Hydrocortisone Base</li>
+            <li>Hydroxocobalamin</li>
+            <li>Hydroxocobalamin Acetate</li>
+            <li>Hydroxocobalamin Chloride</li>
+            <li>Hydroxocobalamin Sulphate</li>
+            <li>Hydroxyprogesterone Caproate</li>
+            <li>Hyoscine Butylbromide</li>
+            <li>Hyoscine n-butyl bromide</li>
+          </ul>
+          <!-- Group I -->
+          <h2 class="text-2xl font-bold mt-8">I</h2>
+          <ul class="list-disc ml-6 space-y-1">
+            <li>Ibuprofen</li>
+            <li>Indole Chemistry</li>
+            <li>Industrial Dextrinum</li>
+            <li>Ingenol Mebutate</li>
+            <li>Inositol</li>
+            <li>Isomaltooligosaccharide Syrup</li>
+            <li>Itraconazole</li>
+            <li>Ivermectin</li>
+          </ul>
+          <!-- Group K -->
+          <h2 class="text-2xl font-bold mt-8">K</h2>
+          <ul class="list-disc ml-6 space-y-1">
+            <li>Kasugamycin Hydrochloride</li>
+            <li>Kitasamycin premix</li>
+          </ul>
+          <!-- Group L -->
+          <h2 class="text-2xl font-bold mt-8">L</h2>
+          <ul class="list-disc ml-6 space-y-1">
+            <li>Lamotrigine</li>
+            <li>Lansoprazole</li>
+            <li>L-Cysteine HCL mono. / anhyd.</li>
+            <li>Levamisol HCL</li>
+            <li>Levocetirizine Di HCl</li>
+            <li>Levonorgestrel</li>
+            <li>Lincomycin</li>
+            <li>Lincomycin HCL injection</li>
+            <li>Lincomycin Hydrochloride</li>
+            <li>Luliconazole</li>
+            <li>lutein CWS powder/beadlet</li>
+            <li>Lutein Feed Grade</li>
+            <li>Lutein Ester Powder</li>
+            <li>lutein oil suspension</li>
+            <li>lutein Powder</li>
+            <li>lutein TAB powder/beadlet</li>
+            <li>L-VC-2-Phosphate</li>
+            <li>lycopene</li>
+          </ul>
+          <!-- Group M -->
+          <h2 class="text-2xl font-bold mt-8">M</h2>
+          <ul class="list-disc ml-6 space-y-1">
+            <li>Maduramycin granular</li>
+            <li>Magnesium Stearate</li>
+            <li>Mebeverine HCl / Pamoate</li>
+            <li>Meclizine HCl</li>
+            <li>Mecobalamin</li>
+            <li>Medroxy Progesterone Acetate</li>
+            <li>Menthol</li>
+            <li>Mephenoxalone</li>
+            <li>Mesna</li>
+            <li>Mesterolone Micro</li>
+            <li>Metaxalone</li>
+            <li>Metformin</li>
+            <li>Methadone HCl</li>
+            <li>Metronidazole</li>
+            <li>Metronidazole</li>
+            <li>Mezlocillin</li>
+            <li>Mezlocillin Sodium</li>
+            <li>Mezlocillin Sodium and Sulbactam Sodium (4:1)</li>
+            <li>Micafungin</li>
+            <li>Midazolam Base/HCL/Maleate</li>
+            <li>Mifepristone</li>
+            <li>Minocycillin</li>
+            <li>Minocycline HCL</li>
+            <li>Mixture Penicillins products</li>
+            <li>Mizoribine</li>
+            <li>Mometasone Furoate</li>
+            <li>Mupirocin</li>
+            <li>Mycophenolate Mofetil</li>
+            <li>Mycophenolate sodium</li>
+            <li>Mycophenolic acid</li>
+          </ul>
+          <!-- Group N -->
+          <h2 class="text-2xl font-bold mt-8">N</h2>
+          <ul class="list-disc ml-6 space-y-1">
+            <li>N-Acetylcysteine</li>
+            <li>Naftopidil</li>
+            <li>Naltrexone</li>
+            <li>Natamycin</li>
+            <li>Neomycin</li>
+            <li>Neomycin Sulfat Oral</li>
+            <li>Neomycin Sulfat Sterile</li>
+            <li>Neostigmine Bromide</li>
+            <li>Neostigmine Methylsulfate</li>
+            <li>Nicarbazin</li>
+            <li>Nicarbazin premix</li>
+            <li>Nicergoline</li>
+            <li>Nitrations & Nitrasoations</li>
+            <li>Noradrenaline Bitartrate</li>
+            <li>Norethisterone</li>
+            <li>Norethisterone Acetate</li>
+            <li>Norethisterone Enanthate</li>
+            <li>Norgestimate</li>
+            <li>Norvancomycin Hydrochloride</li>
+            <li>Nystatin</li>
+          </ul>
+          <!-- Group O -->
+          <h2 class="text-2xl font-bold mt-8">O</h2>
+          <ul class="list-disc ml-6 space-y-1">
+            <li>Oflaxacin</li>
+            <li>Olopatadine HCl</li>
+            <li>Ospemifene</li>
+            <li>Oxalamine</li>
+            <li>Oxaliplatin</li>
+            <li>Oxeladine Citrate</li>
+            <li>Oxibendazole</li>
+            <li>Oxidations – Metallic & Catalysed</li>
+            <li>Oxiracetam</li>
+            <li>Oxytetracycline</li>
+            <li>Oxytetracycline Base</li>
+            <li>Oxytetracycline Dihdydrate Base Injectable</li>
+            <li>Oxytetracycline HCL</li>
+            <li>Oxytetracycline HCL / base</li>
+            <li>Oxytetracylcine HCL Injectable</li>
+          </ul>
+          <!-- Group P -->
+          <h2 class="text-2xl font-bold mt-8">P</h2>
+          <ul class="list-disc ml-6 space-y-1">
+            <li>Paracetamol Powder</li>
+            <li>Penicillin G Benzathine</li>
+            <li>Penicillin G Potassium fist crystal</li>
+            <li>Penicillin G Procain + 1% Lecithine</li>
+            <li>Penicillin G Procain Sterile</li>
+            <li>Penicillin G Procaine (non-Sterile, 70% Granula)</li>
+            <li>Penicillin G Procaine (non-Sterile)</li>
+            <li>Penicillin G Procaine (1% Lecithin, sterile)</li>
+            <li>Penicillin G Procaine (Polysorbate 80, sterile)</li>
+            <li>Penicillin G Procaine (Sterile)</li>
+            <li>Penicillin G Sodium Sterile</li>
+            <li>Penicilline</li>
+            <li>Phenoxymethylpenicillin Potassium</li>
+            <li>Phentermine HCl</li>
+            <li>Pilocarpine HCL</li>
+            <li>Pilocarpine Nitrate</li>
+            <li>Piperacillin Sodium</li>
+            <li>Piperacillin Sodium and Sulbactam Sodium (4:1/2:1)</li>
+            <li>Polymyxin B sulfate (Aerosporin)</li>
+            <li>Polysaccharides (oral)</li>
+            <li>Polysaccharides (for injection)</li>
+            <li>Polysorbate80+9.2% Sodium Citrate Buffered (Sterile)</li>
+            <li>Pranlukast Hemihydrate</li>
+            <li>Praziquantel</li>
+            <li>Prednisolone</li>
+            <li>Prednisolone Acetate</li>
+            <li>Prednisolone Base</li>
+            <li>Prednisone Base</li>
+            <li>Pregabalin</li>
+            <li>Pristinamycin</li>
+            <li>Procaine</li>
+            <li>Progesterone</li>
+            <li>Progesterone</li>
+            <li>Pseudoephedrine HCl</li>
+            <li>Pyridostigmine Bromide</li>
+          </ul>
+          <!-- Group Q -->
+          <h2 class="text-2xl font-bold mt-8">Q</h2>
+          <ul class="list-disc ml-6 space-y-1">
+            <li>Quetiapine Fumarate</li>
+          </ul>
+          <!-- Group R -->
+          <h2 class="text-2xl font-bold mt-8">R</h2>
+          <ul class="list-disc ml-6 space-y-1">
+            <li>Rabeprazole sodium</li>
+            <li>Ractopamine HCl</li>
+            <li>Reductions (NaBH, LiAIH, NaH)</li>
+            <li>Refined Corn Oil</li>
+            <li>Ribavirin</li>
+            <li>Ricobendazole</li>
+            <li>Rifampicin</li>
+            <li>Robenidine HCl</li>
+            <li>Robenidinel</li>
+            <li>Ropinirole HCl</li>
+            <li>Rosuvastatin Calcium</li>
+            <li>Ruxolitinib</li>
+          </ul>
+          <!-- Group S -->
+          <h2 class="text-2xl font-bold mt-8">S</h2>
+          <ul class="list-disc ml-6 space-y-1">
+            <li>Saccharin Sodium</li>
+            <li>S-Carboxymethyl-L-Cysteine</li>
+            <li>Sesame Oil</li>
+            <li>Sirolimus, Rapamycin</li>
+            <li>Sodium Ascorbate</li>
+            <li>Sodium CMC</li>
+            <li>Sodium Starch Glycolate</li>
+            <li>Sorafenib</li>
+            <li>Sorbitol Solution</li>
+            <li>Soy Saponins</li>
+            <li>Soybean Isoflavones</li>
+            <li>Spectinomycin Hydrochloride Non-Sterile</li>
+            <li>Spectinomycin Hydrochloride Sterile</li>
+            <li>Spectinomycin Sulphate</li>
+            <li>Spiramycin Base</li>
+            <li>Spironolactone</li>
+            <li>st.john’s wort extract</li>
+            <li>Starch</li>
+            <li>Streptomycin Sulphate</li>
+            <li>Streptomycin Sulphate Crude</li>
+            <li>Streptomycin Sulphate Non-Sterile</li>
+            <li>Streptomycin Sulphate Sterile</li>
+            <li>Strontium Ranelate</li>
+            <li>Sulbactam Acid</li>
+            <li>Sulbactam Sodium</li>
+            <li>Sulfamethazine</li>
+            <li>Sulfanilamide</li>
+            <li>Sulfathiazole</li>
+            <li>Sulpha Drug’s</li>
+            <li>Sunitinib</li>
+            <li>Suxamethonium Chloride</li>
+          </ul>
+          <!-- Group T -->
+          <h2 class="text-2xl font-bold mt-8">T</h2>
+          <ul class="list-disc ml-6 space-y-1">
+            <li>Tacrolimus, FK506</li>
+            <li>TAEM</li>
+            <li>Tamsulosin Hcl</li>
+            <li>Tapentadol HCl (Non Infringing)</li>
+            <li>Teicoplanin</li>
+            <li>Testosterone Cypionate</li>
+            <li>Testosterone Enanthate</li>
+            <li>Testosterone Propionate</li>
+            <li>Tetracycline HCL</li>
+            <li>Tetracycline HCL / feed grade</li>
+            <li>Tetracycline Hydrochloride</li>
+            <li>Tetrazepam</li>
+            <li>Theobromine</li>
+            <li>Theophylline</li>
+            <li>Thiamphenicol</li>
+            <li>Tiamulin Hydrogen Fumarate 98%</li>
+            <li>Tianeptine Sodium</li>
+            <li>Tibolone</li>
+            <li>Ticagrelor</li>
+            <li>Ticarcillin Sodium (Sterile)</li>
+            <li>Ticarcillin Sodium</li>
+            <li>Tilmicosin</li>
+            <li>Tilmicosin phosphate</li>
+            <li>Tranexamic Acid</li>
+            <li>Trimethoprim</li>
+            <li>Trimethoprim</li>
+            <li>Trimethoprim Micronized</li>
+            <li>Troxerutin</li>
+            <li>Tylosin Phosphate</li>
+            <li>Tylosin Tartrate Granular</li>
+            <li>Tylosin Tartrate Powder</li>
+          </ul>
+          <!-- Group U -->
+          <h2 class="text-2xl font-bold mt-8">U</h2>
+          <ul class="list-disc ml-6 space-y-1">
+            <li>Ulopristal Acetate</li>
+          </ul>
+          <!-- Group V -->
+          <h2 class="text-2xl font-bold mt-8">V</h2>
+          <ul class="list-disc ml-6 space-y-1">
+            <li>Venlafaxine Hydrochloride</li>
+            <li>Vinorelbine Tartrate</li>
+            <li>Vitamin B12 Feed Ingredients</li>
+            <li>Vitamin B12 Food Ingredients</li>
+            <li>Vitamin B12 Ingredients Water Soluble</li>
+            <li>Vitamin B12, Cyanocobalamin</li>
+            <li>Vitamin C Granules</li>
+            <li>Vitamin C (Ascorbic Acid)</li>
+            <li>Vitamins</li>
+            <li>Vitamins</li>
+          </ul>
+          <!-- Group X -->
+          <h2 class="text-2xl font-bold mt-8">X</h2>
+          <ul class="list-disc ml-6 space-y-1">
+            <li>Xylitol</li>
+          </ul>
+          <!-- Group Z -->
+          <h2 class="text-2xl font-bold mt-8">Z</h2>
+          <ul class="list-disc ml-6 space-y-1">
+            <li>ZB premix</li>
+            <li>Zeaxanthin Powder</li>
+            <li>Zilpaterol HCl</li>
+            <li>Zolendronic Acid</li>
+            <li>Zonisamide</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- About -->
+          <div>
+            <h3 class="text-2xl font-bold text-white mb-4">Tama Group-EG</h3>
+            <p class="text-gray-400">
+              We are innovators in healthcare—merging cutting-edge technology with research and compassionate care to empower communities and transform lives.
+            </p>
+          </div>
+          <!-- Quick Links -->
+          <div>
+            <h4 class="text-xl font-semibold text-white mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+              <li><a href="home.html" class="hover:text-white transition-colors">Home</a></li>
+              <li><a href="whoweare.html" class="hover:text-white transition-colors">Who We Are</a></li>
+              <li><a href="research.html" class="hover:text-white transition-colors">Research</a></li>
+              <li><a href="marketing.html" class="hover:text-white transition-colors">Marketing</a></li>
+              <li><a href="contactus.html" class="hover:text-white transition-colors">Contact Us</a></li>
+            </ul>
+          </div>
+          <!-- Social Media -->
+          <div>
+            <h4 class="text-xl font-semibold text-white mb-4">Follow Us</h4>
+            <div class="flex space-x-4">
+              <a href="#" aria-label="Facebook" class="hover:text-white transition-colors">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                  <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.12 8.44 9.88v-6.99H7.9v-2.89h2.54V9.41c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.25 0-1.64.78-1.64 1.58v1.9h2.8l-.45 2.89h-2.35v6.99C18.34 21.12 22 16.99 22 12z"/>
+                </svg>
+              </a>
+              <a href="#" aria-label="Twitter" class="hover:text-white transition-colors">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                  <path d="M22.46 6c-.77.35-1.6.59-2.46.69a4.28 4.28 0 001.88-2.37 8.59 8.59 0 01-2.71 1.03 4.27 4.27 0 00-7.29 3.9 12.12 12.12 0 01-8.8-4.46 4.27 4.27 0 001.32 5.7A4.23 4.23 0 012 9.71v.05a4.27 4.27 0 003.42 4.18 4.28 4.28 0 01-1.92.07 4.27 4.27 0 003.98 2.96A8.56 8.56 0 012 19.54 12.07 12.07 0 008.29 21c7.55 0 11.68-6.26 11.68-11.68 0-.18-.01-.36-.02-.53A8.36 8.36 0 0022.46 6z"/>
+                </svg>
+              </a>
+              <a href="#" aria-label="LinkedIn" class="hover:text-white transition-colors">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                  <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4v16h-4V8zM8 8h3.8v2.2h.06a4.17 4.17 0 013.74-2.06c4 0 4.75 2.64 4.75 6.06V24h-4v-7.5c0-1.8-.03-4.11-2.5-4.11-2.5 0-2.89 1.95-2.89 3.96V24h-4V8z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="mt-8 border-t border-gray-700 pt-6 text-center">
+          <p class="text-gray-500">&copy; 2025 Tama Group-EG. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+      // Toggle mobile main menu
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Toggle desktop "Our Mission" dropdown on click
+      const missionBtn = document.getElementById("mission-btn");
+      const missionDropdown = document.getElementById("mission-dropdown");
+      missionBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        missionDropdown.classList.toggle("hidden");
+      });
+      document.addEventListener("click", () => {
+        missionDropdown.classList.add("hidden");
+      });
+
+      // Toggle mobile "Our Mission" dropdown
+      const mobileMissionBtn = document.getElementById("mobile-mission-btn");
+      const mobileMissionDropdown = document.getElementById("mobile-mission-dropdown");
+      mobileMissionBtn.addEventListener("click", () => {
+        mobileMissionDropdown.classList.toggle("hidden");
+      });
+
+      // Search functionality: Filter the medicines list as you type or click search
+      const searchButton = document.getElementById("search-button");
+      const searchInput = document.getElementById("medicine-search");
+      const medicinesList = document.getElementById("medicines-list");
+
+      function filterMedicines() {
+        const query = searchInput.value.trim().toLowerCase();
+        // Get all <li> elements in the medicines list
+        const items = medicinesList.getElementsByTagName("li");
+
+        for (let item of items) {
+          if (item.textContent.toLowerCase().includes(query)) {
+            item.style.display = "";
+          } else {
+            item.style.display = "none";
+          }
+        }
+      }
+
+      searchButton.addEventListener("click", filterMedicines);
+      searchInput.addEventListener("input", filterMedicines);
+
+      // (Optional) Gallery Modal Code (if needed)
+      const galleryImages = [
+        "images/1.jpg",
+        "images/2.jpg",
+        "images/3.jpg",
+        "images/4.jpg",
+        "images/5.jpg",
+        "images/6.jpg",
+        "images/7.jpg",
+        "images/8.jpg",
+        "images/9.jpg",
+        "images/10.jpg"
+      ];
+      let currentImageIndex = 0;
+      const galleryModal = document.getElementById("gallery-modal");
+      const galleryImageElement = document.getElementById("gallery-image");
+      const openGalleryCard = document.getElementById("openGalleryCard");
+      const mobileOpenGallery = document.getElementById("mobile-open-gallery");
+      const closeGalleryBtn = document.getElementById("close-gallery");
+      const prevBtn = document.getElementById("prev-image");
+      const nextBtn = document.getElementById("next-image");
+
+      function showImage(index) {
+        galleryImageElement.classList.remove("fade-in");
+        void galleryImageElement.offsetWidth;
+        galleryImageElement.src = galleryImages[index];
+        galleryImageElement.classList.add("fade-in");
+      }
+
+      function openGallery() {
+        galleryModal.classList.remove("hidden");
+        galleryModal.classList.add("flex", "items-center", "justify-center");
+        currentImageIndex = 0;
+        showImage(currentImageIndex);
+      }
+
+      if (openGalleryCard) {
+        openGalleryCard.addEventListener("click", openGallery);
+      }
+      if (mobileOpenGallery) {
+        mobileOpenGallery.addEventListener("click", openGallery);
+      }
+      if (closeGalleryBtn) {
+        closeGalleryBtn.addEventListener("click", () => {
+          galleryModal.classList.add("hidden");
+        });
+      }
+      if (prevBtn) {
+        prevBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+          showImage(currentImageIndex);
+        });
+      }
+      if (nextBtn) {
+        nextBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+          showImage(currentImageIndex);
+        });
+      }
+      if (galleryModal) {
+        galleryModal.addEventListener("click", (e) => {
+          if (e.target === galleryModal) {
+            galleryModal.classList.add("hidden");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
