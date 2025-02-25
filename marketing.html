@@ -9,7 +9,7 @@
     <!-- Google Font: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -35,40 +35,46 @@
       .section-divider {
         border-bottom: 1px solid rgba(0, 0, 0, 0.08);
       }
+      /* Skinny logo style */
+      .hero-logo {
+        max-width: 8rem;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        object-fit: contain;
+      }
     </style>
   </head>
   <body class="bg-gray-50 text-gray-800 scroll-smooth">
     <!-- HEADER -->
-    <header class="fixed top-0 left-0 right-0 z-50 shadow-lg bg-gradient-to-r from-emerald-600 to-lime-500">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-emerald-600 to-lime-500 shadow-md">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-16">
-          <!-- Logo & Brand -->
-          <div class="flex items-center space-x-3">
-            <img src="images/tamagrp.jpg" alt="Tama Group Logo" class="h-12 w-12 rounded-full border-2 border-white shadow-md hover-scale" />
-            <a href="home.html" class="text-2xl font-bold text-white hover:text-gray-200 transition-colors hover-scale">
+        <div class="flex items-center justify-between h-20">
+          <!-- Brand -->
+          <div class="flex items-center">
+            <a href="index.html" class="text-4xl font-light text-white tracking-wide hover:text-gray-200 transition-colors">
               Tama Group-EG
             </a>
           </div>
           <!-- Desktop Navigation -->
           <nav class="hidden md:flex items-center space-x-8">
-            <a href="home.html" class="text-white hover:text-gray-200 transition-colors hover-scale">Home</a>
-            <a href="whoweare.html" class="text-white hover:text-gray-200 transition-colors hover-scale">Who We Are</a>
-            <!-- Our Mission Dropdown -->
+            <a href="index.html" class="text-white hover:text-gray-200 transition-colors">Home</a>
+            <a href="whoweare.html" class="text-white hover:text-gray-200 transition-colors">Who We Are</a>
+            <!-- Products Dropdown -->
             <div class="relative">
-              <button id="mission-btn" class="inline-flex items-center text-white hover:text-gray-200 focus:outline-none hover-scale">
-                <span>Our Mission</span>
+              <button id="products-btn" class="inline-flex items-center text-white hover:text-gray-200 focus:outline-none">
+                <span>Products</span>
                 <svg class="ml-1 h-4 w-4 fill-current" viewBox="0 0 20 20">
                   <path d="M5.23 7.21a.75.75 0 011.06.02L10 11.585l3.71-4.355a.75.75 0 011.14.976l-4.25 5a.75.75 0 01-1.14 0l-4.25-5a.75.75 0 01.02-1.06z" />
                 </svg>
               </button>
-              <div id="mission-dropdown" class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden">
-                <a href="humanapis.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover-scale">Human APIs</a>
-                <a href="mediclean.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover-scale">MediClean</a>
+              <div id="products-dropdown" class="absolute left-0 mt-2 w-40 bg-white rounded shadow-lg hidden">
+                <a href="humanapis.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">APIs</a>
+                <a href="mediclean.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">MediClean</a>
               </div>
             </div>
-            <a href="research.html" class="text-white hover:text-gray-200 transition-colors hover-scale">Research</a>
-            <a href="marketing.html" class="text-white hover:text-gray-200 transition-colors hover-scale">Marketing</a>
-            <a href="contact.html" class="text-white hover:text-gray-200 transition-colors hover-scale">Contact Us</a>
+            <a href="marketing.html" class="text-white hover:text-gray-200 transition-colors">Marketing</a>
+            <a href="contactus.html" class="text-white hover:text-gray-200 transition-colors">Contact Us</a>
           </nav>
           <!-- Mobile Menu Button -->
           <div class="md:hidden">
@@ -83,42 +89,49 @@
       <!-- Mobile Navigation -->
       <div id="mobile-menu" class="hidden md:hidden bg-gradient-to-r from-emerald-600 to-lime-500">
         <nav class="px-4 pt-2 pb-4 space-y-2">
-          <a href="home.html" class="block text-white px-3 py-2 rounded-md hover:bg-emerald-700 transition-colors">Home</a>
+          <a href="index.html" class="block text-white px-3 py-2 rounded-md hover:bg-emerald-700 transition-colors">Home</a>
           <a href="whoweare.html" class="block text-white px-3 py-2 rounded-md hover:bg-emerald-700 transition-colors">Who We Are</a>
           <div class="border-t border-emerald-500">
-            <button id="mobile-mission-btn" class="w-full text-left text-white px-3 py-2 flex justify-between items-center focus:outline-none">
-              <span>Our Mission</span>
+            <button id="mobile-products-btn" class="w-full text-left text-white px-3 py-2 flex justify-between items-center focus:outline-none">
+              <span>Products</span>
               <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
                 <path d="M5.23 7.21a.75.75 0 011.06.02L10 11.585l3.71-4.355a.75.75 0 011.14.976l-4.25 5a.75.75 0 01-1.14 0l-4.25-5a.75.75 0 01.02-1.06z" />
               </svg>
             </button>
-            <div id="mobile-mission-dropdown" class="hidden pl-4">
-              <a href="humanapis.html" class="block text-white px-3 py-2 hover:bg-emerald-700 rounded-md">Human APIs</a>
+            <div id="mobile-products-dropdown" class="hidden pl-4">
+              <a href="humanapis.html" class="block text-white px-3 py-2 hover:bg-emerald-700 rounded-md">APIs</a>
               <a href="mediclean.html" class="block text-white px-3 py-2 hover:bg-emerald-700 rounded-md">MediClean</a>
             </div>
           </div>
-          <a href="research.html" class="block text-white px-3 py-2 rounded-md hover:bg-emerald-700 transition-colors">Research</a>
           <a href="marketing.html" class="block text-white px-3 py-2 rounded-md hover:bg-emerald-700 transition-colors">Marketing</a>
-          <a href="contact.html" class="block text-white px-3 py-2 rounded-md hover:bg-emerald-700 transition-colors">Contact Us</a>
+          <a href="contactus.html" class="block text-white px-3 py-2 rounded-md hover:bg-emerald-700 transition-colors">Contact Us</a>
         </nav>
       </div>
     </header>
 
     <!-- MAIN CONTENT: Marketing Page -->
     <main class="pt-20 pb-12">
-      <section id="marketing" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h1 class="text-4xl font-bold text-center mb-8">Marketing</h1>
-        <div class="bg-white p-8 rounded-lg shadow-lg text-center">
-          <p class="text-2xl text-gray-700">
-            Representations
+      <!-- Marketing Hero Image Section -->
+      <section id="marketing-hero" class="relative h-96">
+        <img src="images/pillss.jpg" alt="Marketing Hero Image" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <div class="relative flex items-center justify-center h-full">
+          <h1 class="text-5xl font-bold text-white">Marketing</h1>
+        </div>
+      </section>
 
-            Having adopted a strategy of related horizontal diversification, Tama is always in pursuit of new products and technologies for the benefit of the Egyptian market. Those efforts lead to the company possesses a considerably comprehensive portfolio of agencies and representations, both from local and foreign enterprises that virtually cover all healthcare activities in Egypt.
-            
-             
-            
-            Tama’s International Agencies:
-            
-            Tama represents a select group of international organizations specialized in the supply of pharmaceutical raw material, bulk pharmaceuticals as well as biotechnology products, those companies range from trading companies with local and international liaison offices to production and R&D companies, our representations include companies from Japan, Korea, India, China, Germany, USA, Cuba virtually covering four of the six continents of the civilized world.
+      <!-- Marketing Content Section -->
+      <section id="marketing-content" class="max-w-4xl mx-auto px-4 py-12">
+        <div class="bg-white p-8 rounded-lg shadow-lg">
+          <h2 class="text-3xl font-bold text-gray-800 mb-6">Representations</h2>
+          <p class="text-lg text-gray-700 mb-4">
+            Having adopted a strategy of related horizontal diversification, Tama is always in pursuit of new products and technologies for the benefit of the Egyptian market.
+          </p>
+          <p class="text-lg text-gray-700 mb-4">
+            Those efforts have led the company to possess a comprehensive portfolio of agencies and representations, both from local and foreign enterprises that cover all healthcare activities in Egypt.
+          </p>
+          <p class="text-lg text-gray-700">
+            Tama represents a select group of international organizations specialized in the supply of pharmaceutical raw material, bulk pharmaceuticals, as well as biotechnology products. These companies range from trading companies with local and international liaison offices to production and R&amp;D companies—with representations from Japan, Korea, India, China, Germany, USA, and Cuba—virtually covering four of the six continents.
           </p>
         </div>
       </section>
@@ -139,11 +152,11 @@
           <div>
             <h4 class="text-xl font-semibold text-white mb-4">Quick Links</h4>
             <ul class="space-y-2">
-              <li><a href="home.html" class="hover:text-white transition-colors">Home</a></li>
+              <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
               <li><a href="whoweare.html" class="hover:text-white transition-colors">Who We Are</a></li>
               <li><a href="research.html" class="hover:text-white transition-colors">Research</a></li>
               <li><a href="marketing.html" class="hover:text-white transition-colors">Marketing</a></li>
-              <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
+              <li><a href="contactus.html" class="hover:text-white transition-colors">Contact Us</a></li>
             </ul>
           </div>
           <!-- Social Media -->
@@ -183,24 +196,24 @@
         mobileMenu.classList.toggle("hidden");
       });
       
-      // Toggle desktop "Our Mission" dropdown on click
-      const missionBtn = document.getElementById("mission-btn");
-      const missionDropdown = document.getElementById("mission-dropdown");
-      missionBtn.addEventListener("click", (e) => {
+      // Toggle desktop Products dropdown
+      const productsBtn = document.getElementById("products-btn");
+      const productsDropdown = document.getElementById("products-dropdown");
+      productsBtn.addEventListener("click", (e) => {
         e.stopPropagation();
-        missionDropdown.classList.toggle("hidden");
+        productsDropdown.classList.toggle("hidden");
       });
       document.addEventListener("click", () => {
-        if (!missionDropdown.classList.contains("hidden")) {
-          missionDropdown.classList.add("hidden");
+        if (!productsDropdown.classList.contains("hidden")) {
+          productsDropdown.classList.add("hidden");
         }
       });
       
-      // Toggle mobile "Our Mission" dropdown
-      const mobileMissionBtn = document.getElementById("mobile-mission-btn");
-      const mobileMissionDropdown = document.getElementById("mobile-mission-dropdown");
-      mobileMissionBtn.addEventListener("click", () => {
-        mobileMissionDropdown.classList.toggle("hidden");
+      // Toggle mobile Products dropdown
+      const mobileProductsBtn = document.getElementById("mobile-products-btn");
+      const mobileProductsDropdown = document.getElementById("mobile-products-dropdown");
+      mobileProductsBtn.addEventListener("click", () => {
+        mobileProductsDropdown.classList.toggle("hidden");
       });
       
       // GALLERY MODAL (Manual Swipe Only)
@@ -239,32 +252,38 @@
         showImage(currentImageIndex);
       }
       
-      openGalleryCard.addEventListener("click", openGallery);
+      if (openGalleryCard) {
+        openGalleryCard.addEventListener("click", openGallery);
+      }
       if (mobileOpenGallery) {
         mobileOpenGallery.addEventListener("click", openGallery);
       }
-      
-      closeGalleryBtn.addEventListener("click", () => {
-        galleryModal.classList.add("hidden");
-      });
-      
-      prevBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
-        showImage(currentImageIndex);
-      });
-      
-      nextBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
-        showImage(currentImageIndex);
-      });
-      
-      galleryModal.addEventListener("click", (e) => {
-        if(e.target === galleryModal) {
+      if (closeGalleryBtn) {
+        closeGalleryBtn.addEventListener("click", () => {
           galleryModal.classList.add("hidden");
-        }
-      });
+        });
+      }
+      if (prevBtn) {
+        prevBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+          showImage(currentImageIndex);
+        });
+      }
+      if (nextBtn) {
+        nextBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+          showImage(currentImageIndex);
+        });
+      }
+      if (galleryModal) {
+        galleryModal.addEventListener("click", (e) => {
+          if(e.target === galleryModal) {
+            galleryModal.classList.add("hidden");
+          }
+        });
+      }
     </script>
   </body>
 </html>
