@@ -35,7 +35,7 @@
       .section-divider {
         border-bottom: 1px solid rgba(0, 0, 0, 0.08);
       }
-      /* Logo styling */
+      /* Logo styling (unused now) */
       .brand-logo {
         height: 3rem;
         width: 3rem;
@@ -51,11 +51,8 @@
     <header class="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-emerald-600 to-lime-500 shadow-md">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-20">
-          <!-- Logo & Brand -->
+          <!-- Brand (logo image removed) -->
           <div class="flex items-center space-x-3">
-            <a href="index.html">
-              <img src="images/tamagrp.jpg" alt="Tama Group Logo" class="brand-logo hover-scale" />
-            </a>
             <a href="index.html" class="text-4xl font-light text-white tracking-wide hover:text-gray-200 transition-colors hover-scale">
               Tama Group-EG
             </a>
@@ -64,16 +61,15 @@
           <nav class="hidden md:flex items-center space-x-8">
             <a href="index.html" class="text-white hover:text-gray-200 transition-colors hover-scale">Home</a>
             <a href="whoweare.html" class="text-white hover:text-gray-200 transition-colors hover-scale">Who We Are</a>
-            <!-- Our Mission Dropdown -->
+            <!-- Products Dropdown -->
             <div class="relative">
               <button id="mission-btn" class="inline-flex items-center text-white hover:text-gray-200 focus:outline-none hover-scale">
-                <span>Our Mission</span>
+                <span>Products</span>
                 <svg class="ml-1 h-4 w-4 fill-current" viewBox="0 0 20 20">
                   <path d="M5.23 7.21a.75.75 0 011.06.02L10 11.585l3.71-4.355a.75.75 0 011.14.976l-4.25 5a.75.75 0 01-1.14 0l-4.25-5a.75.75 0 01.02-1.06z" />
                 </svg>
               </button>
               <div id="mission-dropdown" class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden">
-                <!-- Renamed 'Human APIs' to 'APIs' -->
                 <a href="humanapis.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover-scale">APIs</a>
                 <a href="mediclean.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover-scale">MediClean</a>
               </div>
@@ -98,7 +94,7 @@
           <a href="whoweare.html" class="block text-white px-3 py-2 rounded-md hover:bg-emerald-700 transition-colors">Who We Are</a>
           <div class="border-t border-emerald-500">
             <button id="mobile-mission-btn" class="w-full text-left text-white px-3 py-2 flex justify-between items-center focus:outline-none">
-              <span>Our Mission</span>
+              <span>Products</span>
               <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
                 <path d="M5.23 7.21a.75.75 0 011.06.02L10 11.585l3.71-4.355a.75.75 0 011.14.976l-4.25 5a.75.75 0 01-1.14 0l-4.25-5a.75.75 0 01.02-1.06z" />
               </svg>
@@ -135,7 +131,6 @@
           <!-- Contact Details -->
           <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col justify-center">
             <h2 class="text-2xl font-bold text-gray-800 mb-4">Get in Touch</h2>
-            <!-- Using details copied from tamagroup-eg.com -->
             <p class="text-gray-700 mb-4">
               <strong>Address:</strong>
               36 Batrawy St, First District, Nasr City, Egypt
@@ -215,7 +210,7 @@
         mobileMenu.classList.toggle("hidden");
       });
       
-      // Toggle desktop "Our Mission" dropdown
+      // Toggle desktop "Products" dropdown
       const missionBtn = document.getElementById("mission-btn");
       const missionDropdown = document.getElementById("mission-dropdown");
       missionBtn.addEventListener("click", (e) => {
@@ -228,7 +223,7 @@
         }
       });
       
-      // Toggle mobile "Our Mission" dropdown
+      // Toggle mobile "Products" dropdown
       const mobileMissionBtn = document.getElementById("mobile-mission-btn");
       const mobileMissionDropdown = document.getElementById("mobile-mission-dropdown");
       mobileMissionBtn.addEventListener("click", () => {
